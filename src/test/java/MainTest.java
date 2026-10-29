@@ -27,6 +27,6 @@ class MainTest {
     @Test void singleLine()    { assertEquals("1" + NL, run("Cat\n", "?at")); }
     @Test void multipleLines() { assertEquals("1" + NL + "1" + NL + "0" + NL, run("cat\nbat\npattern\n", "?at")); }
     @Test void noInput()       { assertEquals("", run("", "?at")); }
-    @Test void noArgs()        { assertEquals("Usage: glob [PATTERN]" + NL, run("")); }
-    @Test void tooManyArgs()   { assertEquals("Usage: glob [PATTERN]" + NL, run("", "a", "b")); }
+    @Test void noArgs()        { assertEquals("Usage: $(COMMAND) [PATTERN]" + NL, run("")); }
+    @Test void tooManyArgs()   { assertEquals("Usage: $(COMMAND) [PATTERN]" + NL, run("", "a", "b")); }
 }
